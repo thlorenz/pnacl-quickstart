@@ -6,7 +6,7 @@ Quickstart project to allow you to play with [pnacl](https://developers.google.c
 
     npm start
 
-## What does it do
+## What does it do?
 
 On start a server launches that will serve the main page on [http://localhost:3000](http://localhost:3000).
 

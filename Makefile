@@ -20,11 +20,10 @@ build/pnacl_qs.bc: cc/pnacl_qs.cc
 	$(PNACL_CXX) -o $@ $< -O2 $(CXXFLAGS) $(LDFLAGS)
 
 build/pnacl_qs.pexe: build/pnacl_qs.bc
-	mkdir -p build
 	$(PNACL_FINALIZE) -o $@ $<
 
 clean:
-	$(RM) -rf build
+	rm -rf build
 
 echo:
 	@echo "NACL_SDK_ROOT:\t  $(NACL_SDK_ROOT)"

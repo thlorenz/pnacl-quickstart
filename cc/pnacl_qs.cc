@@ -6,14 +6,14 @@
 /// module on the web page.  The browser will ask the Module object to create
 /// a new Instance for each occurrence of the <embed> tag that has these
 /// attributes:
-///     src="hello_tutorial.nmf"
+///     src="pnacl_qs.nmf"
 ///     type="application/x-pnacl"
 class PnaclQuickstartInstance : public pp::Instance {
  public:
   /// The constructor creates the plugin-side instance.
   /// @param[in] instance the handle to the browser-side plugin instance.
   explicit PnaclQuickstartInstance(PP_Instance instance) : pp::Instance(instance) {
-      PostMessage("Instance Created");
+      PostMessage("Module instance created");
   }
   virtual ~PnaclQuickstartInstance() {}
 
@@ -23,7 +23,7 @@ class PnaclQuickstartInstance : public pp::Instance {
     std::string message = var_message.AsString();
     pp::Var var_reply;
     if (message == "hello") {
-      var_reply = pp::Var("hi again from NaCl");
+      var_reply = pp::Var("Hi from PNACl");
       PostMessage(var_reply);
     }
   }

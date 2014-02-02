@@ -1,13 +1,13 @@
 'use strict';
 
-var HelloTutorialModule;
+var PnaclQuickstartModule;
 var statusText = 'NO-STATUS';
 
 function onmoduleLoaded() {
-  HelloTutorialModule = document.getElementById('pnacl_qs');
+  PnaclQuickstartModule = document.getElementById('pnacl_qs');
   updateStatus('SUCCESS');
   
-  HelloTutorialModule.postMessage('hello');
+  PnaclQuickstartModule.postMessage('hello');
 }
 
 function onMessage(e) {
@@ -27,4 +27,4 @@ var listener = document.getElementById('listener');
 listener.addEventListener('load', onmoduleLoaded, true);
 listener.addEventListener('message', onMessage, true);
 
-updateStatus(HelloTutorialModule ? null : 'LOADING...')
+updateStatus(PnaclQuickstartModule ? null : 'LOADING...')
