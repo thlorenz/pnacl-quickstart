@@ -1,40 +1,12 @@
-// Copyright (c) 2013 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-/// @file hello_tutorial.cc
-/// This example demonstrates loading, running and scripting a very simple NaCl
-/// module.  To load the NaCl module, the browser first looks for the
-/// CreateModule() factory method (at the end of this file).  It calls
-/// CreateModule() once to load the module code.  After the code is loaded,
-/// CreateModule() is not called again.
-///
-/// Once the code is loaded, the browser calls the CreateInstance()
-/// method on the object returned by CreateModule().  It calls CreateInstance()
-/// each time it encounters an <embed> tag that references your NaCl module.
-///
-/// The browser can talk to your NaCl module via the postMessage() Javascript
-/// function.  When you call postMessage() on your NaCl module from the browser,
-/// this becomes a call to the HandleMessage() method of your pp::Instance
-/// subclass.  You can send messages back to the browser by calling the
-/// PostMessage() method on your pp::Instance.  Note that these two methods
-/// (postMessage() in Javascript and PostMessage() in C++) are asynchronous.
-/// This means they return immediately - there is no waiting for the message
-/// to be handled.  This has implications in your program design, particularly
-/// when mutating property values that are exposed to both the browser and the
-/// NaCl module.
-
 #include "ppapi/cpp/instance.h"
 #include "ppapi/cpp/module.h"
 #include "ppapi/cpp/var.h"
+#include <stdio.h>
 
 namespace {
-// The expected string sent by the browser.
 const char* const kHelloString = "hello";
-// The string sent back to the browser upon receipt of a message
-// containing "hello".
 const char* const kReplyString = "hello from NaCl";
-} // namespace
+}
 
 /// The Instance class.  One of these exists for each instance of your NaCl
 /// module on the web page.  The browser will ask the Module object to create
@@ -92,6 +64,7 @@ namespace pp {
 /// is one instance per <embed> tag on the page.  This is the main binding
 /// point for your NaCl module with the browser.
 Module* CreateModule() {
+  fprintf(stderr, "creating module");
   return new HelloTutorialModule();
 }
 }  // namespace pp

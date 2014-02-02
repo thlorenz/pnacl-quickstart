@@ -2,7 +2,7 @@
   "name": "pnacl",
   "version": "0.0.0",
   "description": "playing with pnacl",
-  "main": "page/main.js",
+  "main": "main.js",
   "scripts": {
     "start": "make && beefy main.js 3000"
   },
