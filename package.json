@@ -4,14 +4,20 @@
   "description": "playing with pnacl",
   "main": "main.js",
   "scripts": {
-    "start": "make && beefy main.js 3000"
+    "start": "beefy main.js 3000"
   },
+  "browserify": {
+    "transform": [ "commandify" ]
+  },
+  "commandify": "make",
   "repository": {
     "type": "git",
     "url": "git://github.com/thlorenz/pnacl.git"
   },
   "homepage": "https://github.com/thlorenz/pnacl",
-  "dependencies": {},
+  "dependencies": {
+    "commandify": "~0.1.1"
+  },
   "devDependencies": {
     "beefy": "~0.7.1"
   },
