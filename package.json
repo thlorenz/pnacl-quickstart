@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "playing with pnacl",
   "main": "page/main.js",
-  "scripts": {},
+  "scripts": {
+    "start": "make && beefy main.js 3000"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/thlorenz/pnacl.git"
