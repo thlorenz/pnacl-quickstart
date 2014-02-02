@@ -6,6 +6,7 @@ var statusText = 'NO-STATUS';
 function onmoduleLoaded() {
   HelloTutorialModule = document.getElementById('hello_tutorial');
   updateStatus('SUCCESS');
+
   HelloTutorialModule.postMessage('hello');
 }
 

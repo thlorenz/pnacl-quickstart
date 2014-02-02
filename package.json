@@ -4,10 +4,13 @@
   "description": "playing with pnacl",
   "main": "main.js",
   "scripts": {
-    "start": "beefy main.js 3000"
+    "start-beefy": "echo 'fails to reliably pick up .cc changes' && beefy main.js 3000",
+    "start": "watchify main.js -d -o bundle.js&  http-server -p 3000 -c-1"
   },
   "browserify": {
-    "transform": [ "commandify" ]
+    "transform": [
+      "commandify"
+    ]
   },
   "commandify": "make",
   "repository": {
@@ -19,7 +22,8 @@
     "commandify": "~0.1.1"
   },
   "devDependencies": {
-    "beefy": "~0.7.1"
+    "beefy": "~0.7.1",
+    "http-server": "~0.6.1"
   },
   "keywords": [],
   "author": {

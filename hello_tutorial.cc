@@ -21,8 +21,9 @@ class HelloTutorialInstance : public pp::Instance {
  public:
   /// The constructor creates the plugin-side instance.
   /// @param[in] instance the handle to the browser-side plugin instance.
-  explicit HelloTutorialInstance(PP_Instance instance) : pp::Instance(instance)
-  {}
+  explicit HelloTutorialInstance(PP_Instance instance) : pp::Instance(instance) {
+      PostMessage("Instance Created");
+  }
   virtual ~HelloTutorialInstance() {}
 
   /// Handler for messages coming in from the browser via postMessage().  The
