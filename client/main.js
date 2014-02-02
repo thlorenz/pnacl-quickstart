@@ -4,7 +4,7 @@ var HelloTutorialModule;
 var statusText = 'NO-STATUS';
 
 function onmoduleLoaded() {
-  HelloTutorialModule = document.getElementById('hello_tutorial');
+  HelloTutorialModule = document.getElementById('pnacl_qs');
   updateStatus('SUCCESS');
   
   HelloTutorialModule.postMessage('hello');

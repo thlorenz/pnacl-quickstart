@@ -20,13 +20,13 @@ CFLAGS         := -I$(NACL_SDK_ROOT)/include
 
 LDFLAGS        := -L$(NACL_SDK_ROOT)/lib/pnacl/Debug -lppapi_cpp -lppapi
 
-all: build/hello_tutorial.pexe
+all: build/pnacl_qs.pexe
 
-build/hello_tutorial.bc: cc/hello_tutorial.cc
+build/pnacl_qs.bc: cc/pnacl_qs.cc
 	mkdir -p build
 	$(PNACL_CXX) -o $@ $< -O2 $(CXXFLAGS) $(LDFLAGS)
 
-build/hello_tutorial.pexe: build/hello_tutorial.bc
+build/pnacl_qs.pexe: build/pnacl_qs.bc
 	mkdir -p build
 	$(PNACL_FINALIZE) -o $@ $<
 
