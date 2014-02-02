@@ -2,7 +2,7 @@
   "program": {
     "portable": {
       "pnacl-translate": {
-        "url": "hello_tutorial.pexe"
+        "url": "build/hello_tutorial.pexe"
       }
     }
   }

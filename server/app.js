@@ -17,11 +17,11 @@ function serveBundle (res) {
   build().pipe(res);
 }
 
-var handleStatic = ecstatic({ root: __dirname });
+var handleStatic = ecstatic({ root: path.join(__dirname, '..') });
 
 var server = http.createServer(function (req, res) {
   console.log('%s %s', req.method, req.url);
-  if (req.url === '/bundle.js') return serveBundle(res);
+  if (req.url === '/client/bundle.js') return serveBundle(res);
   handleStatic(req, res);
 });
 

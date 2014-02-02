@@ -4,7 +4,7 @@
   "description": "playing with pnacl",
   "main": "main.js",
   "scripts": {
-    "start": "node app"
+    "start": "node server/app"
   },
   "browserify": {
     "transform": [
