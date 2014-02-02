@@ -18,7 +18,7 @@ PNACL_FINALIZE := $(PNACL_TC_PATH)/bin/pnacl-finalize
 CXXFLAGS       := -I$(NACL_SDK_ROOT)/include
 CFLAGS         := -I$(NACL_SDK_ROOT)/include
 
-LDFLAGS        := -L$(NACL_SDK_ROOT)/lib/pnacl/Release -lppapi_cpp -lppapi
+LDFLAGS        := -L$(NACL_SDK_ROOT)/lib/pnacl/Debug -lppapi_cpp -lppapi
 
 all: hello_tutorial.pexe
 
