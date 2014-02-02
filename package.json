@@ -1,8 +1,8 @@
 {
-  "name": "pnacl",
+  "name": "pnacl-quickstart",
   "version": "0.0.0",
-  "description": "playing with pnacl",
-  "main": "main.js",
+  "description": "Quickstart project to allow you to play with pnacl",
+  "main": "client/main.js",
   "scripts": {
     "start": "node server/app"
   },
